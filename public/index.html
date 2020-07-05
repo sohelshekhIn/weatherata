@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>weatherata The weather app developed by Sohel Shekh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <meta charset="UTF-8">
+    <meta property="og:title" content="weatherat	The weather app developed by Sohel Shekh">
+    <meta property="og:description" content="Get your day with weather info! Fast & Secure">
+    <meta property="og:image" content="https://weatherata.web.app/images/weatherata_pop.jpg">
+    <meta property="og:url" content="https://weatherata.web.app">
+    <meta name="twitter:title" content="weatherat	The weather app developed by Sohel Shekh">
+    <meta name="twitter:description" content="Get your day with weather info! Fast & Secure">
+    <meta name="twitter:image" content="https://weatherata.web.app/images/weatherata_pop.jpg">
+    <meta name="twitter:card" content="weatherata">
+    <meta name="twitter:image:alt" content="weatherata	 THe weather app">
+    <meta property="og:site_name" content="weatherata.web.app 	by Sohel Shekh">
+    <meta name="description" content="Get your day, with weather info! Fast & Secure weather app i.e. weatherata !">
+    <meta name="keywords" content="weatherata,javascript,api,SohelShekh,Sohel Shekh, weather, daily, free,fast,secure,gradient,icon,your,day">
+    <meta name="author" content="Sohel -weatherata">
+    <link rel="shortcut icon" href="images/website.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="blocking"></div>
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+    <div class="main">
+        <nav>
+            <h2> <a href="index.html" title="Simple weather app">weatherata</a></h2>
+        </nav>
+        <div class="details">
+            <div class="detailsOfPlace">
+                <h5 id="timezone-h">Time-Zone</h5>
+                <h2 id="timezone-v"></h2>
+            </div>
+            <div class="detailsOfPlace">
+                <h5 id="city-h">City</h5>
+                <h2 id="city-v"></h2>
+            </div>
+            <div class="detailsOfPlace">
+                <h5 id="region-h">Region</h5>
+                <h2 id="region-v"></h2>
+            </div>
+        </div>
+        <div class="section">
+            <div class="iconDiv"> <canvas class="icon" width="128" height="128"></canvas></div>
+            <div class="sum">
+                <h2 id="sum_txt"></h2>
+            </div>
+            <div class="data">
+                <h1 id="temperature-deg"></h1>
+                <h3>&#8451;</h3>
+            </div>
+        </div>
+        <div class="details_info" id="id_di">
+            <div class="detailsOfweather">
+                <h4>Precipitation Type</h4>
+                <h5 class="data_input" id="precip_type"></h5>
+            </div>
+            <div class="detailsOfweather">
+                <h4>Precipitation Intensity</h4>
+                <h5 class="data_input" id="precipInten"></h5>
+            </div>
+            <div class="detailsOfweather">
+                <h4>Precipitation Probability</h4>
+                <h5 class="data_input" id="precipPro"></h5>
+            </div>
+        </div>
+        <div class="details_info">
+            <div class="detailsOfweather">
+                <h4>Humidity</h4>
+                <h5 class="data_input" id="humid"></h5>
+            </div>
+            <div class="detailsOfweather">
+                <h4>Pressure</h4>
+                <h5 class="data_input" id="pressu"></h5>
+            </div>
+            <div class="detailsOfweather">
+                <h4>Visibility</h4>
+                <h5 class="data_input" id="visib"></h5>
+            </div>
+        </div>
+        <div class="details_info last">
+            <div class="detailsOfweather">
+                <h4>Ozone</h4>
+                <h5 class="data_input" id="ozo"></h5>
+            </div>
+        </div>
+        <h6 class="mobile_enable" id="dst">Best view in Desktop</h6>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="social_media"> <a href="mailto:sohelshekh222005@gmail.com?subject=Weather%20App" class="fa fa-google"></a> <a href="https://facebook.com/sohelshekh10004694" target="__top" class="fa fa-facebook"></a> <a href="https://instagram.com/sohelshekh.in" target="__top"
+                class="fa fa-instagram"></a></div> <br><br><br><br>
+        <div class="credits">
+            <h3>Made with ❤️ in <a target="__top" href="https://bit.ly/2UKDygB">India</a></h3>
+            <h5>by Sohel Shekh</h5>
+        </div>
+    </div>
+    <script src="notiflix/notiflix-2.1.2.min.js"></script>
+    <link rel="stylesheet" href="notiflix/notiflix-2.1.2.min.css">
+    <script>
+        Notiflix.Notify.Init({
+            width: "20%",
+            fontSize: "15px",
+            distance: "4%",
+            borderRadius: "50px",
+            position: "right-bottom",
+            failure: {
+                notiflixIconColor: "rgba(238,24,24,0.947)",
+                background: "#ffffff",
+                textColor: "#ff2121",
+            },
+        });
+        Notiflix.Report.Init({
+            svgSize: "30%",
+            backOverlayColor: "rgba(0,0,0,0.517)",
+            messageFontSize: "16px",
+            titleFontSize: "18px",
+        });
+        Notiflix.Report.Init({
+            svgSize: "30%",
+            backOverlayColor: "rgba(0,0,0,0.517)",
+            messageFontSize: "16px",
+            titleFontSize: "18px",
+        });
+        Notiflix.Confirm.Init({
+            messageFontSize: "16px",
+            buttonsFontSize: "18px",
+        });
+        Notiflix.Block.Init({
+            messageFontSize: "16px",
+            svgColor: "#eee8e8",
+            backgroundColor: "rgba(80,63,63,0.9)",
+            svgSize: "55px",
+        });
+        Notiflix.Block.Init({
+            messageColor: "#ffffff",
+            backgroundColor: "rgba(54, 53, 53, 0.9)",
+            svgColor: "#ffffff",
+            svgSize: "85px",
+            messageFontSize: "16px",
+        });
+
+        function NotiflixNotifyFailure(message) {
+            Notiflix.Notify.Failure(message);
+        }
+
+        function NotiflixWarning(title, body, btn, status, func) {
+            Notiflix.Report.Warning(title, body, btn);
+            if (status == true) {
+                func
+            }
+        }
+
+        function NotiflixFailure(title, body, btn, status, func) {
+            Notiflix.Report.Failure(title, body, btn);
+            if (status == true) {
+                func
+            }
+        }
+
+        function NotiflixConfirm(title, body, btnS, btnC, status, funcS, funcC) {
+            Notiflix.Confirm.Show(title, body, btnS, btnC, funcS, funcC);
+        }
+
+        function NotiflixBlock(element, message) {
+            Notiflix.Block.Pulse(element, message);
+        }
+
+        function NotiflixRBlock(element, delay) {
+            Notiflix.Block.Remove(element, delay);
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/style.js"></script>
+    <script src="js/skycons.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-remote-config.js"></script>
+    <script src="js/firebase.js"></script>
+</body>
+
+</html>
